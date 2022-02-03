@@ -1,26 +1,31 @@
-import React, {Component} from "react";
-import { Text, View} from 'react-native';
+import React from "react";
+import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 
-class SayHello extends Component{
-  render(){
-    return(
-      <View>
-        <Text>Hello {this.props.name}</Text>
-      </View>
-    );
-  }
-}
+const UselessTextInput = () => {
+  const [number, onChangeNumber] = React.useState(null);
 
-class myApp extends Component{
-  render(){
-    return(
-      <View>
-        <SayHello name="Sidrah"/>
-        <SayHello name="Nini"/>
-      </View>
-    );
-  }
-}
+  return (
+    <SafeAreaView>
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="Enter..."
+        keyboardType="numeric"
+      />
+    </SafeAreaView>
+  );
+};
 
-export default myApp
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 20,
+  },
+});
 
+
+
+export default UselessTextInput;
