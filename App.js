@@ -8,6 +8,8 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 const TextInputBox = () => {
   const [number, onChangeNumber] = React.useState(null);
+  const [number2, onChangeNumber2] = React.useState(null);
+
 
   return (
     <SafeAreaView>
@@ -18,10 +20,19 @@ const TextInputBox = () => {
         placeholder="Enter..."
         keyboardType="numeric"
       />
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber2}
+        value={number2}
+        placeholder="Enter..."
+        keyboardType="numeric"
+      />
       <ButtonGroup style={{width:"100%"}}>
-  <Button>Like </Button>
-  <Button>Comment</Button>
-</ButtonGroup>
+        <Button>Login</Button>
+      </ButtonGroup>
+      <ButtonGroup style={{width:"100%"}}>
+        <Button>Create an Account</Button>
+      </ButtonGroup>
     </SafeAreaView>
     
   );
